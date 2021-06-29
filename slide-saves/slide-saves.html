@@ -1,0 +1,150 @@
+<!-- Slide One Begins -->
+<div class="slide" data-anchor="slide1">
+<!-- Input Form BEGINS -->
+	<div class="form">
+		<form action="/action_page.php">
+
+	<!-- Location Select -->
+<label for="location-select">Location</label><br>
+<select name="location" id="location-select">
+    <option value="">--Please choose a location--</option>
+    <option value="wellington">Wellington</option>
+    <option value="auckland">Auckland</option>
+    <option value="christchurch">Christchurch</option>
+</select>
+
+<!-- Guest Select -->
+<label for="guest-select">Guests</label><br>
+<select name="guests" id="guest-select">
+    <option value="">--Please select number of guests--</option>
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+		<option value="four">4</option>
+</select>
+
+<!-- Date Picker -->
+<label for="date">Dates</label>
+<input type="text" id="datePicker">
+
+  </form>
+
+	</div>
+	<!-- Input Form ENDS -->
+
+	<!--  Search Button -->
+	<div class="search">
+		<button id="searchBtn">
+			<span>Search <i class="fas fa-search"></i> </span>
+		</button>
+	</div>
+</div>
+<!-- Slide One END -->
+
+<!-- Slide Two BEGINS -->
+<div class="slide" data-anchor="slide2">
+
+	<div class="card-hotel card" style="width: 15rem;">
+	  <img src="images/hotel.jpg" class="card-img-top" alt="hotel">
+	  <div class="card-body">
+	    <h5 class="card-title">Hotel</h5>
+	    <p class="card-text">This is the text for the hotel card</p>
+	    <a href="#" class="btn btn-primary">Book</a>
+	  </div>
+	</div>
+
+	<div class="card-hostel card" style="width: 15rem;">
+		<img src="images/hostel.jpg" class="card-img-top" alt="hostel">
+		<div class="card-body">
+			<h5 class="card-title">Hostel</h5>
+			<p class="card-text">This is the text for the hostel card</p>
+			<a href="#" class="btn btn-primary">Book</a>
+		</div>
+	</div>
+
+	<div class="card-motel card" style="width: 15rem;">
+		<img src="images/motel.jpg" class="card-img-top" alt="motel">
+		<div class="card-body">
+			<h5 class="card-title">Motel</h5>
+			<p class="card-text">This is the text for the motel card</p>
+			<a href="#" class="btn btn-primary">Book</a>
+		</div>
+	</div>
+
+	<div class="card-house card" style="width: 15rem;">
+		<img src="images/house.jpeg" class="card-img-top" alt="house">
+		<div class="card-body">
+			<h5 class="card-title">House</h5>
+			<p class="card-text">This is the text for the house card</p>
+			<a href="#" class="btn btn-primary">Book</a>
+		</div>
+	</div>
+
+
+</div>
+<!-- Slide Two ENDS -->
+
+<!-- Slide THREE BEGINS -->
+
+<div class="slide" data-anchor="slide3">
+
+<div id="selectionBoxOne">
+	<h1 id="mapHeader">Map View</h1>
+	<div class='iframe'><iframe height="85%" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Wellington+(Place%20Of%20Stay)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+</div></div>
+
+<div id="selectionBoxTwo">
+	<div id='info'><img src="images/placeholder.jpg" id="selectedImage" align="right"><h1 id="selectedHeader">Choice of Stay</h1><span><p>String of Accomodation Blurb</span></p></div>
+	<br><ul>Meal Options</ul>
+	<li>Meal Option 1</li>
+	<li>Meal Option 2</li>
+	<li>Meal Option 3</li>
+	<button type="button" id="cancelBtn" class="btn btn-light">Back</button> <button type="button" id="bookBtn" class="btn btn-dark">Book</button>
+</div>
+<!-- Selection Box ENDS -->
+
+</div>
+<!-- Slide Three ENDS  -->
+
+<!-- Slide Four BEGINS -->
+<div class="slide" data-anchor="slide4">
+
+<!-- BookingScreen container -->
+	<div id="bookingScreen">
+
+<!-- infoMealChoice container -->
+	<div id="infoMealChoice">
+			<span><p># of Nights & # of Guests</p></span>
+			<p>Dates</p>
+			<div class="dropdown">
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Meal Selection
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="#">Meal Option 1 - $$$</a>
+			    <a class="dropdown-item" href="#">Meal Option 2 - $$$</a>
+			    <a class="dropdown-item" href="#">Meal Option 3 - $$$</a>
+			  </div>
+				<!-- dropdownmenu items ENDS -->
+			</div>
+			<!-- dropdown ENDS -->
+			<p id="totalPrice">Total: $$$</p>
+		</div>
+		<!--  infoMealChoice ENDS -->
+
+
+<!-- viewChoice container -->
+<div id="viewChoice">
+<span><h1 align="right">Accomodation Choice</h1></span>
+<img src="images/placeholder.jpg" id="selectedImage" align="right">
+<button type="button" id="bookBtnFinal" class="btn btn-dark">Book</button>
+</div>
+<!-- viewChoice ENDS -->
+
+</div>
+
+
+
+
+</div>
+<!-- Slide Four ENDS -->

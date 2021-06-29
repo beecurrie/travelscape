@@ -1,0 +1,319 @@
+// Custom sass ..
+// Imports (FONTS) ----------------------------------------------------------->
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+// Sass Presets -------------------------------------------------------------->
+$lightBlue: blue;
+$white: white;
+$black: black;
+$purple: #6b338d;
+$lightPurple: #9873c7;
+$grey: #bababa;
+
+// Sass Presets ENDS --------------------------------------------------------->
+
+
+// General Page CSS ---------------------------------------------------------->
+
+.fp-tableCell {
+  display: block;
+}
+
+.slide {
+  width: 50vw;
+}
+
+// General CSS END ----------------------------------------------------------->
+
+// Icon Image & Heading CSS -------------------------------------------------->
+	.main {
+		text-align: center;
+	}
+
+	#trvlscpeHdr {
+    position: relative;
+		margin-top: 0px;
+		color: $white;
+		font-family: 'Bebas Neue', cursive;
+		letter-spacing: 8px;
+		font-size: 76px;
+	}
+
+ #houseIcon {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	opacity: 0.5;
+	height: 300px;
+	width: 300px;
+ }
+
+ // Icon Image & Heading END -------------------------------------------------->
+
+ // Form CSS ------------------------------------------------------------------>
+
+	// .form {
+  //   position: absolute;
+  //   top: -50px;
+  //   right: 740px;
+	// 	font-family: 'Bebas Neue', cursive;
+	// 	color: $purple;
+	// 	font-size: 20px;
+	// 	text-align: center;
+	// 	height: 250px;
+	// 	width: 20vw;
+	// 	padding: 10px;
+	// 	background-color: $white;
+	// 	border-radius: 5px;
+	// 	background-color: rgba(255, 255, 255, 0.8);
+	// 	padding: 20px;
+	// }
+  //
+	// input[type=text], select {
+	//   width: 100%;
+	//   padding: 12px 20px;
+	//   margin: 8px 0;
+	//   display: inline-block;
+	//   border: 1px solid #ccc;
+	//   border-radius: 4px;
+	//   box-sizing: border-box;
+	// }
+
+
+ // Form CSS END -------------------------------------------------------------->
+
+ // Button CSS ---------------------------------------------------------------->
+
+// .search {
+// 	position: absolute;
+//   top: 300px;
+// 	left: 820px;
+// }
+//
+// // Button CSS (Derived from CodePen Design in Docs)
+// button {
+// 	cursor: pointer;
+//   position: relative;
+// 	font-family: 'Bebas Neue', cursive;
+//   letter-spacing: 3px;
+//   opacity: 0.9;
+//   padding: 1.5rem 4.5rem;
+//   border-radius: 3.75rem;
+//   line-height: 2.5rem;
+//   font-size: 2rem;
+//   font-weight: 600;
+//
+//   border: none;
+//   background-image: -webkit-linear-gradient(#552586 0%, #B589D6 100%);
+//   background-image: -o-linear-gradient(#552586 0%, #B589D6 100%);
+//   background-image: linear-gradient(#552586 0%, #B589D6 100%);
+//  }
+//
+// button span {
+//  color: white;
+//  background-image: linear-gradient(0deg, #EE82DA 0%, #FEFAFD 100%);
+//  -webkit-background-clip: text;
+//  background-clip: text;
+//  filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
+// }
+// // Button ENDS
+//
+// .icon {
+// 	color: $white;
+// }
+
+// Button CSS END ------------------------------------------------------------->
+
+// Slide Two (CARDS) ---------------------------------------------------------->
+
+// .card-hostel,
+// .card-motel,
+// .card-house {
+//   float: left;
+//   height: 350px;
+//   width: 250px;
+//   margin: 20px;
+//   border: solid 1px $purple;
+// }
+//
+//
+//
+.btn-dark {
+  font-family: 'Bebas Neue', cursive;
+  background-color: $purple;
+  border: solid 1px $purple;
+  margin: 5px;
+  width: 90px;
+  height: 50px;
+  font-size: 30px;
+}
+
+.btn-primary:active {
+  background-color: $lightPurple;
+  border: solid 3px $lightPurple;
+}
+
+.btn-light {
+  font-family: 'Bebas Neue', cursive;
+  margin: 5px;
+  width: 90px;
+  height: 50px;
+  font-size: 30px;
+  border: solid 1px $grey;
+}
+//
+// .card img {
+//   height: 100%;
+//   width: 100%;
+//   overflow: hidden;
+// }
+//
+// .card-title {
+//   font-size: 30px;
+//   font-family: 'Bebas Neue', cursive;
+//   letter-spacing: 2px;
+//   color: $purple;
+// }
+
+// Slide Two ENDS ------------------------------------------------------------>
+
+// Slide Three STARTS (Selection) -------------------------------------------->
+
+// #selectionBoxOne {
+//   font-family: 'Bebas Neue', cursive;
+//   position: relative;
+//   float: left;
+//   padding: 20px;
+//   margin-left: 400px;
+//   height: 40vh;
+//   width: 27vw !important;
+//   background-color: rgba(255, 255, 255, 0.8);
+// }
+//
+// #selectionBoxOne h1 {
+//   font-size: 40px;
+//   width: 100%;
+//   color: $purple;
+//   margin: 0;
+// }
+//
+// .iframe {
+//   margin: 0px;
+//   width: 100%;
+//   height: 100%;
+//
+// }
+//
+// #selectionBoxTwo {
+//   font-family: 'Bebas Neue', cursive;
+//   position: absolute;
+//   float: left;
+//   padding: 20px;
+//   margin-left: 1000px;
+//   height: 40vh;
+//   width: 27vw !important;
+//   background-color: rgba(255, 255, 255, 0.8);
+// }
+//
+// #selectedHeader {
+//   color: $purple;
+// }
+//
+//
+// #selectedImage {
+//   border: 2px solid $purple;
+//   border-radius: 120px;
+//   height: 250px;
+//   width: 250px;
+// }
+//
+// #info p {
+//   font-size: 20px;
+// }
+//
+// ul {
+//   font-size: 30px;
+//   color: $purple;
+//   margin-left: -35px;
+// }
+//
+// li {
+//   font-size: 20px;
+// }
+//
+//
+// #bookBtn {
+//   position: absolute;
+//   top: 340px;
+//   right: 30px;
+// }
+//
+// #cancelBtn {
+//   position: absolute;
+//   top: 340px;
+//   right: 140px;
+// }
+
+// Slide Three ENDS ---------------------------------------------------------->
+
+// Slide Four (BOOKING) STARTS ----------------------------------------------->
+
+// #bookingScreen {
+//   position: relative;
+//   padding: 20px;
+//   margin-left: 500px;
+//   background-color: rgba(255, 255, 255, 0.8);
+//   width: 50vw;
+//   height: 50vh;
+// }
+//
+// #infoMealChoice {
+//   width: 50%;
+//   height: 100%;
+//   font-family: 'Bebas Neue', cursive;
+//   font-size: 40px;
+// }
+//
+// #viewChoice img {
+//   border-radius: 350px;
+//   border: solid 2px $purple;
+// }
+//
+// #dropdownMenuButton {
+//   background-color: $purple;
+//   width: 250px;
+//   height: 70px;
+//   font-size: 30px;
+// }
+//
+// .dropdown-item {
+//   font-size: 30px;
+// }
+//
+// #totalPrice {
+//   font-size: 70px;
+//   color: $purple;
+//   margin-top: 190px;
+// }
+//
+// #viewChoice h1 {
+//   position: absolute;
+//   top: 10px;
+//   right: 20px;
+//   color: $purple;
+//   font-family: 'Bebas Neue', cursive;
+// }
+// #viewChoice img {
+//   position: absolute;
+//   top: 70px;
+//   right: 20px;
+// }
+// #bookBtnFinal {
+//   position: absolute;
+//   height: 75px;
+//   width: 90px;
+//   font-size:40px;
+//   top: 450px;
+//   right: 30px;
+// }
+
+// Slide Four (BOOKING) ENDS ------------------------------------------------->

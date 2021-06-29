@@ -1,0 +1,32 @@
+{
+  "name": "templates",
+  "version": "1.0.0",
+  "description": "Gulp Skeleton 2017",
+  "main": "index.html",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-connect": "^2.2.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.0",
+    "jshint-stylish": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "author": "Jared",
+  "license": "ISC",
+  "dependencies": {
+    "@blueprintjs/core": "^3.45.0",
+    "@blueprintjs/datetime": "^3.23.4",
+    "bootstrap": "^5.0.2",
+    "fullpage.js": "^3.1.2",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.1",
+    "sweetalert2": "^11.0.17"
+  }
+}
