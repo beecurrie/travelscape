@@ -25,8 +25,7 @@
 		-o-background-size: cover;
 		background-size: cover;
     height: 100%;
-		width: 100%;
-  ">
+		width: 100%;">
 				<!-- Background image -->
 
 				<!-- Main Header Container -->
@@ -36,6 +35,7 @@
 					<!-- Header -->
 					<h1 id="trvlscpeHdr">Travelscape</h1>
 				</div>
+				<!-- Main Header Container ENDS -->
 
 				<!-- Slide One Begins -->
 				<div class="slide" data-anchor="slide1">
@@ -90,8 +90,8 @@
 						<img src="images/hotel.jpg" class="card-img-top" alt="hotel">
 						<div class="card-body">
 							<h5 class="hotel-title">Hotel</h5>
-							<p class="card-text">This is the text for the hotel card</p>
-							<a href="#" class="btn btn-dark" id="hotelSelect">Book</a>
+							<p class="hotel-text">This is the text for the hotel card</p>
+							<a href="#" class="btn btn-dark" id="hotelSelect">View</a>
 						</div>
 					</div>
 
@@ -99,8 +99,8 @@
 						<img src="images/hostel.jpg" class="card-img-top" alt="hostel">
 						<div class="card-body">
 							<h5 class="hostel-title">Hostel</h5>
-							<p class="hotel-text">This is the text for the hostel card</p>
-							<a href="#" class="btn btn-dark" id="hostelSelect">Book</a>
+							<p class="hostel-text">This is the text for the hostel card</p>
+							<a href="#" class="btn btn-dark" id="hostelSelect">View</a>
 						</div>
 					</div>
 
@@ -108,8 +108,8 @@
 						<img src="images/motel.jpg" class="card-img-top" alt="motel">
 						<div class="card-body">
 							<h5 class="motel-title">Motel</h5>
-							<p class="card-text">This is the text for the motel card</p>
-							<a href="#" class="btn btn-dark" id="motelSelect">Book</a>
+							<p class="motel-text">This is the text for the motel card</p>
+							<a href="#" class="btn btn-dark" id="motelSelect">View</a>
 						</div>
 					</div>
 
@@ -117,8 +117,8 @@
 						<img src="images/house.jpeg" class="card-img-top" alt="house">
 						<div class="card-body">
 							<h5 class="house-title">House</h5>
-							<p class="card-text">This is the text for the house card</p>
-							<a href="#" class="btn btn-dark" id="houseSelect">Book</a>
+							<p class="house-text">This is the text for the house card</p>
+							<a href="#" class="btn btn-dark" id="houseSelect">View</a>
 						</div>
 					</div>
 
@@ -139,11 +139,11 @@
 				</div></div>
 
 				<div id="selectionBoxTwo">
-					<div id='info'><img src="images/placeholder.jpg" id="selectedImage" align="right"><h1 id="selectedHeader">Choice of Stay</h1><span><p>String of Accomodation Blurb</span></p></div>
+					<div id='info'><img src="images/placeholder.jpg" id="selectedImage" align="right"><h1 id="selectedHeader">Choice of Stay</h1><span><p id="selectedBlurb">String of Accomodation Blurb</span></p></div>
 					<br><ul>Meal Options</ul>
-					<li>Meal Option 1</li>
-					<li>Meal Option 2</li>
-					<li>Meal Option 3</li>
+					<li id="mealOne">Meal Option 1</li>
+					<li id="mealTwo">Meal Option 2</li>
+					<li id="mealThree">Meal Option 3</li>
 					<button type="button" id="cancelBtn" class="btn btn-light">Back</button> <button type="button" id="bookBtn" class="btn btn-dark">Book</button>
 				</div>
 				<!-- Selection Box ENDS -->
@@ -151,11 +151,47 @@
 				</div>
 				<!-- Slide Three ENDS  -->
 
+				<!-- Slide Four BEGINS -->
+				<div class="slide" data-anchor="slide4">
 
+				<!-- BookingScreen container -->
+					<div id="bookingScreen">
+
+				<!-- infoMealChoice container -->
+					<div id="infoMealChoice">
+							<span><p># of Nights & # of Guests</p></span>
+							<p>Dates</p>
+							<div class="dropdown">
+							  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    Meal Selection
+							  </button>
+							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							    <a class="dropdown-item" href="#" id="mealOneSelect">Meal Option 1 - $$$</a>
+							    <a class="dropdown-item" href="#" id="mealTwoSelect">Meal Option 2 - $$$</a>
+							    <a class="dropdown-item" href="#" id="mealThreeSelect">Meal Option 3 - $$$</a>
+							  </div>
+								<!-- dropdownmenu items ENDS -->
+							</div>
+							<!-- dropdown ENDS -->
+							<p id="totalPrice">Total: $$$</p>
+						</div>
+						<!--  infoMealChoice ENDS -->
+
+
+				<!-- viewChoice container -->
+				<div id="viewChoice">
+				<span><h1 align="right" id="finalHeader">Accomodation Choice</h1></span>
+				<img src="images/placeholder.jpg" id="finalImage" align="right">
+				<button type="button" id="cancelBtnFinal" class="btn btn-light">Back</button> <button type="button" id="bookBtnFinal" class="btn btn-dark">Book</button>
+				</div>
+				<!-- viewChoice ENDS -->
+
+				</div>
+
+				</div>
+				<!-- Slide Four ENDS -->
 			</div>
 			<!-- Background Image DIV END -->
-
-
 		</div>
 	</div>
 	<!-- FullPage Container END -->

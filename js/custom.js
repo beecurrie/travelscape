@@ -18,9 +18,10 @@ $(document).ready(function(){
       slidesNavigation: true,
       normalScrollElements: '.slide',
       autoScrolling: true,
-      scrollHorizontally: true,
       controlArrows: false,
-      sectionSelector: '.section'
+      sectionSelector: '.section',
+      setKeyboardScrolling: false,
+      setAllowScrolling: false,
   });
 
 
@@ -35,10 +36,9 @@ $(document).ready(function(){
       maxNight: 10,
       minCapacity: 1,
       maxCapacity: 1,
-      blurb: 'A hostel',
-      mealOptionOne: 'Soup',
-      mealOptionTwo: 'Breakfast Bar',
-      mealOptionThree: 'None',
+      mealOptionOne: ['Soup of the Day', 7.50],
+      mealOptionTwo: ['Breakfast Bar', 10.00],
+      mealOptionThree: ['None', 0.00]
     },
     motel: {
       pricePerNight: 90,
@@ -46,10 +46,9 @@ $(document).ready(function(){
       maxNight: 10,
       minCapacity: 2,
       maxCapacity: 4,
-      blurb: 'A motel',
-      mealOptionOne: 'Breakfast',
-      mealOptionTwo: 'Breakfast & Dinner',
-      mealOptionThree: 'None',
+      mealOptionOne: ['Breakfast', 13.50],
+      mealOptionTwo: ['Breakfast & Dinner', 27.50],
+      mealOptionThree: ['None', 0.00]
     },
     hotel: {
       pricePerNight: 157,
@@ -57,10 +56,9 @@ $(document).ready(function(){
       maxNight: 5,
       minCapacity: 1,
       maxCapacity: 2,
-      blurb: 'A hotel',
-      mealOptionOne: 'Breakfast',
-      mealOptionTwo: 'Lunch',
-      mealOptionThree: 'Dinner',
+      mealOptionOne: ['Breakfast', 20.00],
+      mealOptionTwo: ['Lunch', 20.00],
+      mealOptionThree: ['Dinner', 30.00],
     },
     house: {
       pricePerNight: 240,
@@ -68,10 +66,9 @@ $(document).ready(function(){
       maxNight: 15,
       minCapacity: 1,
       maxCapacity: 4,
-      blurb: 'A house',
-      mealOptionOne: 'Cereals & Toast',
-      mealOptionTwo: '2 Nights Dinner Supplies',
-      mealOptionThree: 'Both Options',
+      mealOptionOne: ['Cereals & Toast', 17.50],
+      mealOptionTwo: ['2 Nights Dinner Supplies', 30.00],
+      mealOptionThree: ['Both Options', 45.00],
     }
   };
 
@@ -82,30 +79,40 @@ $(document).ready(function(){
   var motelButton = document.querySelector('#motelSelect');
   var houseButton = document.querySelector('#houseSelect');
   var goBack = document.querySelector('#cancelBtn');
+  var continueBook = document.querySelector('#bookBtn');
+  var goBackFinal = document.querySelector('#cancelBtnFinal');
 
-getButton.addEventListener("click", function (){
-  $.fn.fullpage.moveSlideRight();
-});
+  getButton.addEventListener("click", function (){
+    $.fn.fullpage.moveSlideRight();
+  });
 
-hotelButton.addEventListener("click", function (){
-  $.fn.fullpage.moveSlideRight();
-});
+  hotelButton.addEventListener("click", function (){
+    $.fn.fullpage.moveSlideRight();
+  });
 
-hostelButton.addEventListener("click", function (){
-  $.fn.fullpage.moveSlideRight();
-});
+  hostelButton.addEventListener("click", function (){
+    $.fn.fullpage.moveSlideRight();
+  });
 
-motelButton.addEventListener("click", function (){
-  $.fn.fullpage.moveSlideRight();
-});
+  motelButton.addEventListener("click", function (){
+    $.fn.fullpage.moveSlideRight();
+  });
 
-houseButton.addEventListener("click", function (){
-  $.fn.fullpage.moveSlideRight();
-});
+  houseButton.addEventListener("click", function (){
+    $.fn.fullpage.moveSlideRight();
+  });
 
-goBack.addEventListener("click", function (){
-  $.fn.fullpage.moveSlideLeft();
-});
+  goBack.addEventListener("click", function (){
+    $.fn.fullpage.moveSlideLeft();
+  });
+
+  continueBook.addEventListener("click", function (){
+    $.fn.fullpage.moveSlideRight();
+  });
+
+  goBackFinal.addEventListener("click", function (){
+    $.fn.fullpage.moveSlideLeft();
+  });
 
 	//methods
 	$.fn.fullpage.setAllowScrolling(false);
@@ -113,69 +120,104 @@ goBack.addEventListener("click", function (){
     // --------------------- FULLPAGE JS END -----------------------------
 
     // ---------------------- Slide THREE Selection Logic ----------------
+// View Button Vars
 var hotelButtonClick = document.querySelector('#hotelSelect');
+var hostelButtonClick = document.querySelector('#hostelSelect');
+var motelButtonClick = document.querySelector('#motelSelect');
+var houseButtonClick = document.querySelector('#houseSelect');
+// Dom Queries (TEXT & IMAGES)
+var getHeaderSpace = document.querySelector('#selectedHeader');
+var getImageSpace = document.querySelector('#selectedImage');
+var getBlurbSpace = document.querySelector('#selectedBlurb');
+var getMealOne = document.querySelector('#mealOne');
+var getMealTwo = document.querySelector('#mealTwo');
+var getMealThree = document.querySelector('#mealThree');
+// Dom Queries (BUTTONS)
+var letsBook = document.querySelector('#bookBtn');
+// Dom Queries (CHOICES FOR FINAL)
+var choiceHeader = document.querySelector('#finalHeader');
+var choiceImage = document.querySelector('#finalImage');
+var mealOneDrop = document.querySelector('#mealOneSelect');
+var mealTwoDrop = document.querySelector('#mealTwoSelect');
+var mealThreeDrop = document.querySelector('#mealThreeSelect');
 
 hotelButtonClick.addEventListener("click", function (){
-  var getTitle = document.querySelector('.hotel-title').innerText;
-  var getImage = document.querySelector('.card-hotel img');
-  var getBlurb = document.querySelector('.hotel-text');
+  // Pulling the Information for Hotel
+  var getHotelTitle = document.querySelector('.hotel-title').innerText;
+  var getHotelImage = document.querySelector('.card-hotel img').src;
+  var getHotelBlurb = document.querySelector('.hotel-text').innerText;
+  // Updating the pulled information into slide 3
+  var updateImage = getImageSpace.src = getHotelImage;
+  var updateHeader = getHeaderSpace.innerText = getHotelTitle;
+  var updateBlurb = getBlurbSpace.innerText = getHotelBlurb;
+  // Updating the meal options for the selection
+  var updateMealOne = getMealOne.innerText = accomData.hotel.mealOptionOne[0] + ' - $' + accomData.hotel.mealOptionOne[1];
+  var updateMealTwo = getMealTwo.innerText = accomData.hotel.mealOptionTwo[0] + ' - $' + accomData.hotel.mealOptionTwo[1];
+  var updateMealThree = getMealThree.innerText = accomData.hotel.mealOptionThree[0] + ' - $' + accomData.hotel.mealOptionThree[1];
 });
 
+hostelButtonClick.addEventListener("click", function (){
+  // Pulling the Information for Hostel
+  var getHostelTitle = document.querySelector('.hostel-title').innerText;
+  var getHostelImage = document.querySelector('.card-hostel img').src;
+  var getHostelBlurb = document.querySelector('.hostel-text').innerText;
+  // Updating the pulled information into slide 3
+  var updateImage = getImageSpace.src = getHostelImage;
+  var updateHeader = getHeaderSpace.innerText = getHostelTitle;
+  var updateBlurb = getBlurbSpace.innerText = getHostelBlurb;
+  // Updating the meal options for the selection
+  var updateMealOne = getMealOne.innerText = accomData.hostel.mealOptionOne[0] + ' - $' + accomData.hostel.mealOptionOne[1];
+  var updateMealTwo = getMealTwo.innerText = accomData.hostel.mealOptionTwo[0] + ' - $' + accomData.hostel.mealOptionTwo[1];
+  var updateMealThree = getMealThree.innerText = accomData.hostel.mealOptionThree[0] + ' - $' + accomData.hostel.mealOptionThree[1];
 
+});
 
-  // var selectObj = {
-  //   getHeader = document.querySelector('#selectedHeader'),
-  //   getImage = document.querySelector('#selectedImage'),
-  //   getButton = document.querySelector('#searchBtn'),
-  //
-  //
-  //   init: updateSelection () {
-  //     selectObj.getButton.onclick = function () {
-  //     selectObj.updateImage();
-  //     selectObj.updateHdr();
-  //     },
-  //     // Init Outer Bracket
-  //
-  //     updateImg: function (){
-  //       selectObj.getImageSelect = document.getElementById('').value;
-  //       selectObj.updateChoiceOne = document.querySelector('#selectedImage');
-  //
-  //       if ( selectObj.getImageSelect === 'hotel') {
-  //         selectObj.updateChoiceOne.src = '/images/hotel.jpg';
-  //       } else if ( selectObj.getImageSelect === 'hostel') {
-  //         selectObj.updateChoiceOne.src = '/images/hostel.jpg';
-  //       } else if ( selectObj.getImageSelect === 'motel') {
-  //         selectObj.updateChoiceOne.src = '/images/motel.jpg';
-  //       } else if ( selectObj.getImageSelect === 'house') {
-  //         selectObj.updateChoiceOne.src = '/images/house.png';
-  //       }
-  //       // Logic Outer Bracket
-  //     },
-  //     // UpdateImg function Outer Bracket
-  //
-  //     updateHdr: function (){
-  //       selectObj.getHeaderSelect = document.getElementById('').value;
-  //       selectObj.updateChoiceTwo = document.querySelector('#selectedHeader');
-  //
-  //       if ( selectObj.getHeaderSelect === 'hotel') {
-  //         selectObj.updateChoiceTwo.innerHTML = 'Hotel';
-  //       } else if ( selectObj.getHeaderSelect === 'hostel') {
-  //         selectObj.updateChoiceTwo.innerHTML = 'Hostel';
-  //       } else if ( selectObj.getHeaderSelect === 'motel') {
-  //         selectObj.updateChoiceTwo.innerHTML = 'Motel';
-  //       } else if ( selectObj.getHeaderSelect === 'house') {
-  //         selectObj.updateChoiceTwo.innerHTML = 'House';
-  //       }
-  //       // Logic Outer Bracket
-  //     }
-  //     // UpdateHDR Func Outer bracket
-  //
-  //
-  //   }
-  //   // init outer bracket
-  // }
-  // // variable selectObj outer bracket
+motelButtonClick.addEventListener("click", function (){
+  // Pulling the Information for Motel
+  var getMotelTitle = document.querySelector('.motel-title').innerText;
+  var getMotelImage = document.querySelector('.card-motel img').src;
+  var getMotelBlurb = document.querySelector('.motel-text').innerText;
+  // Updating the pulled information into slide 3
+  var updateImage = getImageSpace.src = getMotelImage;
+  var updateHeader = getHeaderSpace.innerText = getMotelTitle;
+  var updateBlurb = getBlurbSpace.innerText = getMotelBlurb;
+  // Updating the meal options for the selection
+  var updateMealOne = getMealOne.innerText = accomData.motel.mealOptionOne[0] + ' - $' + accomData.motel.mealOptionOne[1];
+  var updateMealTwo = getMealTwo.innerText = accomData.motel.mealOptionTwo[0] + ' - $' + accomData.motel.mealOptionTwo[1];
+  var updateMealThree = getMealThree.innerText = accomData.motel.mealOptionThree[0] + ' - $' + accomData.motel.mealOptionThree[1];
 
+});
+
+houseButtonClick.addEventListener("click", function (){
+  // Pulling the Information for House
+  var getHouseTitle = document.querySelector('.house-title').innerText;
+  var getHouseImage = document.querySelector('.card-house img').src;
+  var getHouseBlurb = document.querySelector('.house-text').innerText;
+  // Updating the pulled information into slide 3
+  var updateImage = getImageSpace.src = getHouseImage;
+  var updateHeader = getHeaderSpace.innerText = getHouseTitle;
+  var updateBlurb = getBlurbSpace.innerText = getHouseBlurb;
+  // Updating the meal options for the selection
+  var updateMealOne = getMealOne.innerText = accomData.house.mealOptionOne[0] + ' - $' + accomData.house.mealOptionOne[1];
+  var updateMealTwo = getMealTwo.innerText = accomData.house.mealOptionTwo[0] + ' - $' + accomData.house.mealOptionTwo[1];
+  var updateMealThree = getMealThree.innerText = accomData.house.mealOptionThree[0] + ' - $' + accomData.house.mealOptionThree[1];
+
+});
+
+goBack.addEventListener("click", function (){
+  var clearHeaderChoice = getHeaderSpace.innerText = 'Choice Of Stay';
+  var clearImageChoice = getImageSpace.src = "images/placeholder.jpg";
+  var clearBlurbChoice = getBlurbSpace.innerText = 'Blurb of accomodation';
+});
+
+letsBook.addEventListener("click", function (){
+  // Updating Final Slide Info For viewChoice
+  var updateChoiceHeader = choiceHeader.innerText = getHeaderSpace.innerText;
+  var updateChoiceImage = choiceImage.src = getImageSpace.src;
+  var updateMealChoiceOne = mealOneDrop.innerText = getMealOne.innerText;
+  var updateMealChoiceTwo = mealTwoDrop.innerText = getMealTwo.innerText;
+  var updateMealChoiceThree = mealThreeDrop.innerText = getMealThree.innerText;
+});
 
 
 });
