@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<link href="assets/font-awesome/css/all.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="assets/font-awesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
-	<link rel="stylesheet" href="assets/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="assets/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullpage.css">
-	<link rel="stylesheet" href="css/custom.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.min.css">
 	<title>Travelscape</title>
 </head>
+
 <body>
 	<!-- Fullpage Container BEGIN -->
 	<div id="fullpage">
-		<div class="section" data-anchor="section1">
+		<div class="section active" data-anchor="section1">
 
 			<!-- Background image -->
-<div class="bg-image"
-  style="
+			<div class="bg-image" style="
     background-image: url(../images/queenstown.jpg);
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -26,29 +27,138 @@
     height: 100%;
 		width: 100%;
   ">
-<!-- Background image -->
+				<!-- Background image -->
 
-<!-- Main Header Container -->
-	<div class="main">
-		<!-- Icon/Logo -->
-		<img src="images/house.png" alt="icon" id="houseIcon">
-		<!-- Header -->
-		<h1 id="trvlscpeHdr">Travelscape</h1>
+				<!-- Main Header Container -->
+				<div class="main">
+					<!-- Icon/Logo -->
+					<img src="images/house.png" alt="icon" id="houseIcon">
+					<!-- Header -->
+					<h1 id="trvlscpeHdr">Travelscape</h1>
+				</div>
+
+				<!-- Slide One Begins -->
+				<div class="slide" data-anchor="slide1">
+					<div class="formContainer">
+					<!-- Input Form BEGINS -->
+					<div class="form">
+
+							<!-- Location Select -->
+							<label for="location-select">Location</label><br>
+							<select name="location" id="location-select">
+								<option value="">--Please choose a location--</option>
+								<option value="wellington">Wellington</option>
+								<option value="auckland">Auckland</option>
+								<option value="christchurch">Christchurch</option>
+							</select>
+
+							<!-- Guest Select -->
+							<label for="guest-select">Guests</label><br>
+							<select name="guests" id="guest-select">
+								<option value="">--Please select number of guests--</option>
+								<option value="one">1</option>
+								<option value="two">2</option>
+								<option value="three">3</option>
+								<option value="four">4</option>
+							</select>
+
+							<!-- Date Picker -->
+							<label for="date">Dates</label>
+							<input type="text" id="datePicker">
+							<!-- Date Picker ENDS -->
+						</div>
+						<!-- Input Form ENDS -->
+					</div>
+					<!-- Form container ENDS -->
+
+					<!--  Search Button -->
+					<div class="search">
+						<button id="searchBtn">
+							<span>Search <i class="fas fa-search"></i> </span>
+						</button>
+					</div>
+					<!-- Search Button ENDS -->
+
+				</div>
+				<!-- Slide One END -->
+
+				<!-- Slide Two BEGINS -->
+				<div class="slide">
+
+					<div class="cardHolder">
+					<div class="card-hotel card" style="width: 20rem;">
+						<img src="images/hotel.jpg" class="card-img-top" alt="hotel">
+						<div class="card-body">
+							<h5 class="hotel-title">Hotel</h5>
+							<p class="card-text">This is the text for the hotel card</p>
+							<a href="#" class="btn btn-dark" id="hotelSelect">Book</a>
+						</div>
+					</div>
+
+					<div class="card-hostel card" style="width: 20rem;">
+						<img src="images/hostel.jpg" class="card-img-top" alt="hostel">
+						<div class="card-body">
+							<h5 class="hostel-title">Hostel</h5>
+							<p class="hotel-text">This is the text for the hostel card</p>
+							<a href="#" class="btn btn-dark" id="hostelSelect">Book</a>
+						</div>
+					</div>
+
+					<div class="card-motel card" style="width: 20rem;">
+						<img src="images/motel.jpg" class="card-img-top" alt="motel">
+						<div class="card-body">
+							<h5 class="motel-title">Motel</h5>
+							<p class="card-text">This is the text for the motel card</p>
+							<a href="#" class="btn btn-dark" id="motelSelect">Book</a>
+						</div>
+					</div>
+
+					<div class="card-house card" style="width: 20rem;">
+						<img src="images/house.jpeg" class="card-img-top" alt="house">
+						<div class="card-body">
+							<h5 class="house-title">House</h5>
+							<p class="card-text">This is the text for the house card</p>
+							<a href="#" class="btn btn-dark" id="houseSelect">Book</a>
+						</div>
+					</div>
+
+					</div>
+					<!-- Card Holder Container ENDS -->
+
+
+				</div>
+				<!-- Slide Two ENDS -->
+
+				<!-- Slide THREE BEGINS -->
+
+				<div class="slide" data-anchor="slide3">
+
+				<div id="selectionBoxOne">
+					<h1 id="mapHeader">Map View</h1>
+					<div class='iframe'><iframe height="85%" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Wellington+(Place%20Of%20Stay)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+				</div></div>
+
+				<div id="selectionBoxTwo">
+					<div id='info'><img src="images/placeholder.jpg" id="selectedImage" align="right"><h1 id="selectedHeader">Choice of Stay</h1><span><p>String of Accomodation Blurb</span></p></div>
+					<br><ul>Meal Options</ul>
+					<li>Meal Option 1</li>
+					<li>Meal Option 2</li>
+					<li>Meal Option 3</li>
+					<button type="button" id="cancelBtn" class="btn btn-light">Back</button> <button type="button" id="bookBtn" class="btn btn-dark">Book</button>
+				</div>
+				<!-- Selection Box ENDS -->
+
+				</div>
+				<!-- Slide Three ENDS  -->
+
+
+			</div>
+			<!-- Background Image DIV END -->
+
+
+		</div>
 	</div>
-
-
-
-</div>
-<!-- Background Image DIV END -->
-
-
-
-</div>
-</div>
-<!-- FullPage Container END -->
-
-
-
+	<!-- FullPage Container END -->
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="assets/daterangepicker/moment.min.js"></script>
@@ -60,4 +170,5 @@
 	<script src="js/custom.js"></script>
 
 </body>
+
 </html>

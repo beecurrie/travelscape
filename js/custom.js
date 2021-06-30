@@ -1,7 +1,7 @@
 // custom js file
 $(document).ready(function(){
 
-// Date Range Picker
+// --------------------- DATE RANGE -----------------------------
   $('#datePicker').daterangepicker({
     opens: 'center',
     minDate: 1,
@@ -11,6 +11,18 @@ $(document).ready(function(){
   }, function(start, end, label) {
 
   });
+
+  $('#fullpage').fullpage({
+      //options here
+      css3: true,
+      slidesNavigation: true,
+      normalScrollElements: '.slide',
+      autoScrolling: true,
+      scrollHorizontally: true,
+      controlArrows: false,
+      sectionSelector: '.section'
+  });
+
 
 
   // --------------------- VARIABLES -----------------------------
@@ -23,7 +35,10 @@ $(document).ready(function(){
       maxNight: 10,
       minCapacity: 1,
       maxCapacity: 1,
-      blurb: 'A'
+      blurb: 'A hostel',
+      mealOptionOne: 'Soup',
+      mealOptionTwo: 'Breakfast Bar',
+      mealOptionThree: 'None',
     },
     motel: {
       pricePerNight: 90,
@@ -31,6 +46,10 @@ $(document).ready(function(){
       maxNight: 10,
       minCapacity: 2,
       maxCapacity: 4,
+      blurb: 'A motel',
+      mealOptionOne: 'Breakfast',
+      mealOptionTwo: 'Breakfast & Dinner',
+      mealOptionThree: 'None',
     },
     hotel: {
       pricePerNight: 157,
@@ -38,6 +57,10 @@ $(document).ready(function(){
       maxNight: 5,
       minCapacity: 1,
       maxCapacity: 2,
+      blurb: 'A hotel',
+      mealOptionOne: 'Breakfast',
+      mealOptionTwo: 'Lunch',
+      mealOptionThree: 'Dinner',
     },
     house: {
       pricePerNight: 240,
@@ -45,25 +68,60 @@ $(document).ready(function(){
       maxNight: 15,
       minCapacity: 1,
       maxCapacity: 4,
+      blurb: 'A house',
+      mealOptionOne: 'Cereals & Toast',
+      mealOptionTwo: '2 Nights Dinner Supplies',
+      mealOptionThree: 'Both Options',
     }
   };
 
   // --------------------- FULLPAGE JS -----------------------------
+  var getButton = document.querySelector('#searchBtn');
+  var hotelButton = document.querySelector('#hotelSelect');
+  var hostelButton = document.querySelector('#hostelSelect');
+  var motelButton = document.querySelector('#motelSelect');
+  var houseButton = document.querySelector('#houseSelect');
+  var goBack = document.querySelector('#cancelBtn');
 
+getButton.addEventListener("click", function (){
+  $.fn.fullpage.moveSlideRight();
+});
 
-    $('#fullpage').fullpage({
-      css3: true,
-      verticalCentered: true,
-      resize: true,
-      sectionSelector: '.section',
-      slideSelector: '.slide'
-    });
+hotelButton.addEventListener("click", function (){
+  $.fn.fullpage.moveSlideRight();
+});
 
-    $.fn.fullpage.setAllowScrolling(false);
+hostelButton.addEventListener("click", function (){
+  $.fn.fullpage.moveSlideRight();
+});
+
+motelButton.addEventListener("click", function (){
+  $.fn.fullpage.moveSlideRight();
+});
+
+houseButton.addEventListener("click", function (){
+  $.fn.fullpage.moveSlideRight();
+});
+
+goBack.addEventListener("click", function (){
+  $.fn.fullpage.moveSlideLeft();
+});
+
+	//methods
+	$.fn.fullpage.setAllowScrolling(false);
 
     // --------------------- FULLPAGE JS END -----------------------------
 
     // ---------------------- Slide THREE Selection Logic ----------------
+var hotelButtonClick = document.querySelector('#hotelSelect');
+
+hotelButtonClick.addEventListener("click", function (){
+  var getTitle = document.querySelector('.hotel-title').innerText;
+  var getImage = document.querySelector('.card-hotel img');
+  var getBlurb = document.querySelector('.hotel-text');
+});
+
+
 
   // var selectObj = {
   //   getHeader = document.querySelector('#selectedHeader'),
