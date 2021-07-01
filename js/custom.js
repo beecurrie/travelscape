@@ -219,6 +219,37 @@ letsBook.addEventListener("click", function (){
   var updateMealChoiceThree = mealThreeDrop.innerText = getMealThree.innerText;
 });
 
+// --------------------- Slide 3 Selections END -----------------------------
+
+// --------------------- SWEETALERT BEGINS -----------------------------
+
+// Getting the Button for fire
+var getBookingConfirm = document.querySelector('#bookBtnFinal');
+
+// Click Event
+getBookingConfirm.addEventListener("click", function(){
+
+  Swal.fire({
+  title: 'Are you sure?',
+  text: "Your card will be charged upon confirming",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#6b338d',
+  cancelButtonColor: '#bababa',
+  confirmButtonText: 'Yes, confirm!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      'Booking confirmed!',
+      'Reference #30923',
+      'success'
+    );
+  } 
+});
+// sweet alert ENDS
+
+});
+// getBookimg ENDS
 
 });
 // Document Ready ENDS
