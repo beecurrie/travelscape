@@ -10,6 +10,8 @@ The goal of this project was to supply the user with a simple and easy to use ap
 ### 📔
 *Please Note: This project is entirely for education purposes at this uploaded stage, all imagery & information is only used inside this application for show and assessment for Level 6 Web & UX at YooBee Colleges, in future if a public release was trialled all copyright images would be attributed or removed*
 
+*ALSO IMPORTANT: The application is currently optimized for website viewing at 1920x1080*
+
 ---
 
 ## Code Validation ✔️
