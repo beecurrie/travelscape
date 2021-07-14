@@ -19,7 +19,7 @@
 
 			<!-- Background image -->
 			<div class="bg-image" style="
-    background-image: url(../images/queenstown.jpg);
+    background-image: url(images/queenstown.jpg);
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -41,11 +41,10 @@
 				<div class="slide" data-anchor="slide1">
 					<div class="formContainer">
 					<!-- Input Form BEGINS -->
-					<div class="form">
-
+					<div class="form" data-parsley-validate="">
 							<!-- Location Select -->
 							<label for="location-select">Location</label><br>
-							<select name="location" id="location-select">
+							<select name="location" id="location-select" required="">
 								<option value="">--Please choose a location--</option>
 								<option value="wellington">Wellington</option>
 								<option value="auckland">Auckland</option>
@@ -54,17 +53,17 @@
 
 							<!-- Guest Select -->
 							<label for="guest-select">Guests</label><br>
-							<select name="guests" id="guest-select">
+							<select name="guests" id="guestSelect" required="">
 								<option value="">--Please select number of guests--</option>
-								<option value="one">1</option>
-								<option value="two">2</option>
-								<option value="three">3</option>
-								<option value="four">4</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
 							</select>
 
 							<!-- Date Picker -->
 							<label for="date">Dates</label>
-							<input type="text" id="datePicker">
+							<input type="text" id="datePicker" required="">
 							<!-- Date Picker ENDS -->
 						</div>
 						<!-- Input Form ENDS -->
@@ -83,46 +82,47 @@
 				<!-- Slide One END -->
 
 				<!-- Slide Two BEGINS -->
-				<div class="slide">
+				<div class="slide" data-anchor="slide2">
 
 					<div class="cardHolder">
-					<div class="card-hotel card" style="width: 20rem;">
-						<img src="images/hotel.jpeg" class="card-img-top" alt="hotel">
-						<div class="card-body">
-							<h5 class="hotel-title">Hotel</h5>
-							<p class="hotel-text">This is the text for the hotel card</p>
-							<a href="#" class="btn btn-dark" id="hotelSelect">View</a>
+
+						<div class="card-hotel card hidden-hotel" style="width: 20rem;">
+								<img src="images/hotel.jpeg" class="card-img-top" alt="hotel">
+								<div class="card-body">
+									<h5 class="hotel-title">Hotel</h5>
+									<p class="hotel-text">This is the text for the hotel card</p>
+								<button class="btn btn-dark" id="hotelSelect">View</button>
 						</div>
 					</div>
 
-					<div class="card-hostel card" style="width: 20rem;">
-						<img src="images/hostel.jpg" class="card-img-top" alt="hostel">
-						<div class="card-body">
-							<h5 class="hostel-title">Hostel</h5>
-							<p class="hostel-text">This is the text for the hostel card</p>
-							<a href="#" class="btn btn-dark" id="hostelSelect">View</a>
+					<div class="card-hostel card hidden-hostel" style="width: 20rem;">
+							<img src="images/hostel.jpg" class="card-img-top" alt="hostel">
+							<div class="card-body">
+								<h5 class="hostel-title">Hostel</h5>
+								<p class="hostel-text">This is the text for the hostel card</p>
+							<button class="btn btn-dark" id="hostelSelect">View</button>
+					</div>
+				</div>
+
+					<div class="card-motel card hidden-motel" style="width: 20rem;">
+							<img src="images/motel.jpeg" class="card-img-top" alt="motel">
+								<div class="card-body">
+									<h5 class="motel-title">Motel</h5>
+									<p class="motel-text">This is the text for the motel card</p>
+								<button class="btn btn-dark" id="motelSelect">View</button>
 						</div>
 					</div>
 
-					<div class="card-motel card" style="width: 20rem;">
-						<img src="images/motel.jpeg" class="card-img-top" alt="motel">
-						<div class="card-body">
-							<h5 class="motel-title">Motel</h5>
-							<p class="motel-text">This is the text for the motel card</p>
-							<a href="#" class="btn btn-dark" id="motelSelect">View</a>
+					<div class="card-house card hidden-house" style="width: 20rem;">
+							<img src="images/house.jpeg" class="card-img-top" alt="house">
+								<div class="card-body">
+									<h5 class="house-title">House</h5>
+									<p class="house-text">This is the text for the house card</p>
+								<button class="btn btn-dark" id="houseSelect">View</button>
 						</div>
 					</div>
 
-					<div class="card-house card" style="width: 20rem;">
-						<img src="images/house.jpeg" class="card-img-top" alt="house">
-						<div class="card-body">
-							<h5 class="house-title">House</h5>
-							<p class="house-text">This is the text for the house card</p>
-							<a href="#" class="btn btn-dark" id="houseSelect">View</a>
-						</div>
-					</div>
-
-					</div>
+				</div>
 					<!-- Card Holder Container ENDS -->
 
 
@@ -159,20 +159,13 @@
 
 				<!-- infoMealChoice container -->
 					<div id="infoMealChoice">
-							<span><p># of Nights & # of Guests</p></span>
-							<p>Dates</p>
-							<div class="dropdown">
-							  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    Meal Selection
-							  </button>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="#" id="mealOneSelect">Meal Option 1 - $$$</a>
-							    <a class="dropdown-item" href="#" id="mealTwoSelect">Meal Option 2 - $$$</a>
-							    <a class="dropdown-item" href="#" id="mealThreeSelect">Meal Option 3 - $$$</a>
-							  </div>
-								<!-- dropdownmenu items ENDS -->
-							</div>
+								<select name="meals" id="mealSelection" required="">
+								  <option value="mealOne" id="mealOneSelect">Meal One</option>
+								  <option value="mealTwo" id="mealTwoSelect">Meal Two</option>
+								  <option value="mealThree" id="mealThreeSelect">Meal Three</option>
+								</select>
 							<!-- dropdown ENDS -->
+							<button type="button" id="updateMeal" class="btn btn-dark">Confirm</button>
 							<p id="totalPrice">Total: $$$</p>
 						</div>
 						<!--  infoMealChoice ENDS -->
@@ -196,12 +189,12 @@
 	</div>
 	<!-- FullPage Container END -->
 
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<script src="assets/daterangepicker/moment.min.js"></script>
 	<script src="assets/daterangepicker/daterangepicker.js"></script>
 	<script src="js/bootstrap.bundle.js"></script>
 	<script src="js/jquery.fullpage.js"></script>
-	<!-- <script src="/js/parsley.js"></script> -->
+	<script src="js/parsley.js"></script>
 	<script src="js/sweetalert2.all.min.js"></script>
 	<script src="js/custom.js"></script>
 
