@@ -3,13 +3,13 @@ $(document).ready(function(){
 
 // --------------------- DATE RANGE -----------------------------
   $('#datePicker').daterangepicker({
-    "maxSpan": {
-    "days": 16,
+    'maxSpan': {
+    'days': 16,
   },
-    "opens": 'right',
-    "minDate": 1,
-    "maxDate": 16,
-    "autoApply": false,
+    'opens': 'right',
+    'minDate': 1,
+    'maxDate': 16,
+    'autoApply': false,
   }, function(start, end, label) {
 
   });
@@ -92,41 +92,22 @@ $(document).ready(function(){
       mealOptionThree: ['Both Options', 45.00],
     }
   };
-  // --------------------- PARSLEY VALIDATION -----------------------------
-
-  // new Parsley('.form');
 
   // --------------------- FULLPAGE JS -----------------------------
   var getButton = document.querySelector('#searchBtn');
-  var hotelButton = document.querySelector('#hotelSelect');
-  var hostelButton = document.querySelector('#hostelSelect');
-  var motelButton = document.querySelector('#motelSelect');
-  var houseButton = document.querySelector('#houseSelect');
   var goBack = document.querySelector('#cancelBtn');
   var continueBook = document.querySelector('#bookBtn');
   var goBackFinal = document.querySelector('#cancelBtnFinal');
 
-  hostelButton.addEventListener("click", function (){
-    $.fn.fullpage.moveSlideRight();
-  });
-
-  motelButton.addEventListener("click", function (){
-    $.fn.fullpage.moveSlideRight();
-  });
-
-  houseButton.addEventListener("click", function (){
-    $.fn.fullpage.moveSlideRight();
-  });
-
-  goBack.addEventListener("click", function (){
+  goBack.addEventListener('click', function (){
     $.fn.fullpage.moveSlideLeft();
   });
 
-  continueBook.addEventListener("click", function (){
+  continueBook.addEventListener('click', function (){
     $.fn.fullpage.moveSlideRight();
   });
 
-  goBackFinal.addEventListener("click", function (){
+  goBackFinal.addEventListener('click', function (){
     $.fn.fullpage.moveSlideLeft();
   });
 
@@ -139,56 +120,52 @@ $(document).ready(function(){
 $('input[id="datePicker"]').daterangepicker();
 
 $('input[id="datePicker"]').on('apply.daterangepicker', function(ev, picker) {
-    $('#numberdays').val(picker.endDate.diff(picker.startDate, "days"));
-      accomData.nights = picker.endDate.diff(picker.startDate, "days");
+    $('#numberdays').val(picker.endDate.diff(picker.startDate, 'days'));
+      accomData.nights = picker.endDate.diff(picker.startDate, 'days');
     });
     // Date Picker Input Pull END
 
 // This is the logic for guests and night/s value
 function selectionLogic () {
   var getNights = accomData.nights;
-  var getGuestsChoice = document.querySelector("#guestSelect");
+  var getGuestsChoice = document.querySelector('#guestSelect');
   var getGuests = parseInt(getGuestsChoice.value);
 
   if ((getNights > accomData.hotel.minNight) && (getNights < accomData.hotel.maxNight)) {
-    $(".card-hotel").removeClass('hidden-hotel');
+    $('.card-hotel').removeClass('hidden-hotel');
   }
 
   if ((getNights > accomData.motel.minNight) && (getNights < accomData.motel.maxNight)) {
-    $(".card-motel").removeClass('hidden-motel');
+    $('.card-motel').removeClass('hidden-motel');
   }
 
   if ((getNights > accomData.hostel.minNight) && (getNights < accomData.hostel.maxNight)) {
-    $(".card-hostel").removeClass('hidden-hostel');
+    $('.card-hostel').removeClass('hidden-hostel');
   }
 
   if ((getNights > accomData.house.minNight) && (getNights < accomData.house.maxNight)) {
-    $(".card-house").removeClass('hidden-house');
+    $('.card-house').removeClass('hidden-house');
   }
 
   if (getGuests > accomData.hotel.maxCapacity || getGuests < accomData.hotel.minCapacity){
-    $(".card-hotel").addClass('hidden-hotel');
-    console.log("working");
+    $('.card-hotel').addClass('hidden-hotel');
   }
 
   if (getGuests > accomData.hostel.maxCapacity){
-    $(".card-hostel").addClass('hidden-hostel');
-    console.log("working 2");
+    $('.card-hostel').addClass('hidden-hostel');
   }
 
   if (getGuests > accomData.motel.maxCapacity || getGuests < accomData.motel.minCapacity){
-    $(".card-motel").addClass('hidden-motel');
-    console.log("working 3");
+    $('.card-motel').addClass('hidden-motel');
   }
 
   if (getGuests > accomData.house.maxCapacity){
-    $(".card-house").addClass('hidden-house');
-    console.log("working 4");
+    $('.card-house').addClass('hidden-house');
   }
 }
 // selectionLogic ENDS
 
-    // ---------------------- Slide THREE Selection Logic ----------------
+// ---------------------- Slide THREE Selection Logic ----------------
 
 
 // View Button Vars
@@ -212,7 +189,7 @@ var mealOneDrop = document.querySelector('#mealOneSelect');
 var mealTwoDrop = document.querySelector('#mealTwoSelect');
 var mealThreeDrop = document.querySelector('#mealThreeSelect');
 
-hotelButtonClick.addEventListener("click", function (){
+hotelButtonClick.addEventListener('click', function (){
   // Pulling the Information for Hotel
   var getHotelTitle = document.querySelector('.hotel-title').innerText;
   var getHotelImage = document.querySelector('.card-hotel img').src;
@@ -228,7 +205,7 @@ hotelButtonClick.addEventListener("click", function (){
   $.fn.fullpage.moveSlideRight();
 });
 
-hostelButtonClick.addEventListener("click", function (){
+hostelButtonClick.addEventListener('click', function (){
   // Pulling the Information for Hostel
   var getHostelTitle = document.querySelector('.hostel-title').innerText;
   var getHostelImage = document.querySelector('.card-hostel img').src;
@@ -241,10 +218,10 @@ hostelButtonClick.addEventListener("click", function (){
   var updateMealOne = getMealOne.innerText = accomData.hostel.mealOptionOne[0] + ' - $' + accomData.hostel.mealOptionOne[1];
   var updateMealTwo = getMealTwo.innerText = accomData.hostel.mealOptionTwo[0] + ' - $' + accomData.hostel.mealOptionTwo[1];
   var updateMealThree = getMealThree.innerText = accomData.hostel.mealOptionThree[0] + ' - $' + accomData.hostel.mealOptionThree[1];
-
+  $.fn.fullpage.moveSlideRight();
 });
 
-motelButtonClick.addEventListener("click", function (){
+motelButtonClick.addEventListener('click', function (){
   // Pulling the Information for Motel
   var getMotelTitle = document.querySelector('.motel-title').innerText;
   var getMotelImage = document.querySelector('.card-motel img').src;
@@ -257,10 +234,10 @@ motelButtonClick.addEventListener("click", function (){
   var updateMealOne = getMealOne.innerText = accomData.motel.mealOptionOne[0] + ' - $' + accomData.motel.mealOptionOne[1];
   var updateMealTwo = getMealTwo.innerText = accomData.motel.mealOptionTwo[0] + ' - $' + accomData.motel.mealOptionTwo[1];
   var updateMealThree = getMealThree.innerText = accomData.motel.mealOptionThree[0] + ' - $' + accomData.motel.mealOptionThree[1];
-
+  $.fn.fullpage.moveSlideRight();
 });
 
-houseButtonClick.addEventListener("click", function (){
+houseButtonClick.addEventListener('click', function (){
   // Pulling the Information for House
   var getHouseTitle = document.querySelector('.house-title').innerText;
   var getHouseImage = document.querySelector('.card-house img').src;
@@ -273,16 +250,16 @@ houseButtonClick.addEventListener("click", function (){
   var updateMealOne = getMealOne.innerText = accomData.house.mealOptionOne[0] + ' - $' + accomData.house.mealOptionOne[1];
   var updateMealTwo = getMealTwo.innerText = accomData.house.mealOptionTwo[0] + ' - $' + accomData.house.mealOptionTwo[1];
   var updateMealThree = getMealThree.innerText = accomData.house.mealOptionThree[0] + ' - $' + accomData.house.mealOptionThree[1];
-
+  $.fn.fullpage.moveSlideRight();
 });
 
-goBack.addEventListener("click", function (){
+goBack.addEventListener('click', function (){
   var clearHeaderChoice = getHeaderSpace.innerText = 'Choice Of Stay';
-  var clearImageChoice = getImageSpace.src = "images/placeholder.jpg";
+  var clearImageChoice = getImageSpace.src = 'images/placeholder.jpg';
   var clearBlurbChoice = getBlurbSpace.innerText = 'Blurb of accomodation';
 });
 
-letsBook.addEventListener("click", function (){
+letsBook.addEventListener('click', function (){
   // Updating Final Slide Info For viewChoice
   var updateChoiceHeader = choiceHeader.innerText = getHeaderSpace.innerText;
   var updateChoiceImage = choiceImage.src = getImageSpace.src;
@@ -294,18 +271,18 @@ letsBook.addEventListener("click", function (){
 // --------------------- Slide 3 Selections END -----------------------------
 
 // --------------------- Slide 4 Info Update START --------------------------
-var bookingFinal = document.querySelector("#bookBtn");
-var updatePrice = document.querySelector("#updateMeal");
+var bookingFinal = document.querySelector('#bookBtn');
+var updatePrice = document.querySelector('#updateMeal');
 
-updatePrice.addEventListener("click", function(){
+updatePrice.addEventListener('click', function(){
   updatePricing();
 });
 
 
 function updatePricing(){
-  var accomSelect = document.querySelector("#selectedHeader").innerText;
-  var getChoice = document.querySelector("#mealSelection").value;
-  var updateTotal = document.querySelector("#totalPrice");
+  var accomSelect = document.querySelector('#selectedHeader').innerText;
+  var getChoice = document.querySelector('#mealSelection').value;
+  var updateTotal = document.querySelector('#totalPrice');
 
   var hotelTotal = accomData.hotel.pricePerNight * accomData.nights;
   var hostelTotal = accomData.hostel.pricePerNight * accomData.nights;
@@ -315,70 +292,70 @@ function updatePricing(){
 
 
 // Hotel Pricing w Meal START
-  if (getChoice === "mealOne" && accomSelect === "Hotel"){
+  if (getChoice === 'mealOne' && accomSelect === 'Hotel'){
     var hotelMealOne = hotelTotal + accomData.hotel.mealOptionOne[1];
-    updateTotal.innerText = "Total: $" + hotelMealOne;
+    updateTotal.innerText = 'Total: $' + hotelMealOne;
   }
 
-  if (getChoice === "mealTwo" && accomSelect === "Hotel"){
+  if (getChoice === 'mealTwo' && accomSelect === 'Hotel'){
     var hotelMealTwo = hotelTotal + accomData.hotel.mealOptionTwo[1];
-    updateTotal.innerText = "Total: $" + hotelMealTwo;
+    updateTotal.innerText = 'Total: $' + hotelMealTwo;
   }
 
-  if (getChoice === "mealThree" && accomSelect === "Hotel"){
+  if (getChoice === 'mealThree' && accomSelect === 'Hotel'){
     var hotelMealThree = hotelTotal + accomData.hotel.mealOptionThree[1];
-    updateTotal.innerText = "Total: $" + hotelMealThree;
+    updateTotal.innerText = 'Total: $' + hotelMealThree;
   }
 // Hotel Pricing w Meal end
 // Hostel Pricing w Meal START
 
-if (getChoice === "mealOne" && accomSelect === "Hostel"){
+if (getChoice === 'mealOne' && accomSelect === 'Hostel'){
   var hostelMealOne = hostelTotal + accomData.hostel.mealOptionOne[1];
-  updateTotal.innerText = "Total: $" +  hoteslMealOne;
+  updateTotal.innerText = 'Total: $' +  hoteslMealOne;
 }
 
-if (getChoice === "mealTwo" && accomSelect === "Hostel"){
+if (getChoice === 'mealTwo' && accomSelect === 'Hostel'){
   var hostelMealTwo = hostelTotal + accomData.hostel.mealOptionTwo[1];
-  updateTotal.innerText = "Total: $" +  hostelMealTwo;
+  updateTotal.innerText = 'Total: $' +  hostelMealTwo;
 }
 
-if (getChoice === "mealThree" && accomSelect === "Hostel"){
+if (getChoice === 'mealThree' && accomSelect === 'Hostel'){
   var hostelMealThree = hostelTotal + accomData.hostel.mealOptionThree[1];
-  updateTotal.innerText = "Total: $" +  hostelMealThree;
+  updateTotal.innerText = 'Total: $' +  hostelMealThree;
 }
 // Hostel Pricing w Meal END
 // Motel Pricing w Meal STARTS
 
-if (getChoice === "mealOne" && accomSelect === "Motel"){
+if (getChoice === 'mealOne' && accomSelect === 'Motel'){
   var motelMealOne = motelTotal + accomData.motel.mealOptionOne[1];
-  updateTotal.innerText = "Total: $" +  motelMealOne;
+  updateTotal.innerText = 'Total: $' +  motelMealOne;
 }
 
-if (getChoice === "mealTwo" && accomSelect === "Motel"){
+if (getChoice === 'mealTwo' && accomSelect === 'Motel'){
   var motelMealTwo = motelTotal + accomData.motel.mealOptionTwo[1];
-  updateTotal.innerText = "Total: $" +  motelMealTwo;
+  updateTotal.innerText = 'Total: $' +  motelMealTwo;
 }
 
-if (getChoice === "mealThree" && accomSelect === "Motel"){
+if (getChoice === 'mealThree' && accomSelect === 'Motel'){
   var motelMealThree = motelTotal + accomData.motel.mealOptionThree[1];
-  updateTotal.innerText = "Total: $" +  motelMealThree;
+  updateTotal.innerText = 'Total: $' +  motelMealThree;
 }
 // Motel Pricing w Meal ENDS
 
 // House Pricing w Meal STARTS
-if (getChoice === "mealOne" && accomSelect === "House"){
+if (getChoice === 'mealOne' && accomSelect === 'House'){
   var houseMealOne = houseTotal + accomData.house.mealOptionOne[1];
-  updateTotal.innerText = "Total: $" +  houseMealOne;
+  updateTotal.innerText = 'Total: $' +  houseMealOne;
 }
 
-if (getChoice === "mealTwo" && accomSelect === "House"){
+if (getChoice === 'mealTwo' && accomSelect === 'House'){
   var houseMealTwo = houseTotal + accomData.house.mealOptionTwo[1];
-  updateTotal.innerText = "Total: $" +  houseMealTwo;
+  updateTotal.innerText = 'Total: $' +  houseMealTwo;
 }
 
-if (getChoice === "mealThree" && accomSelect === "House"){
+if (getChoice === 'mealThree' && accomSelect === 'House'){
   var houseMealThree = houseTotal + accomData.house.mealOptionThree[1];
-  updateTotal.innerText = "Total: $" +  houseMealThree;
+  updateTotal.innerText = 'Total: $' +  houseMealThree;
 }
 }
 
@@ -388,11 +365,11 @@ if (getChoice === "mealThree" && accomSelect === "House"){
 var getBookingConfirm = document.querySelector('#bookBtnFinal');
 
 // Click Event
-getBookingConfirm.addEventListener("click", function(){
+getBookingConfirm.addEventListener('click', function(){
 
   Swal.fire({
   title: 'Are you sure?',
-  text: "Your card will be charged upon confirming",
+  text: 'Your card will be charged upon confirming',
   icon: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#6b338d',

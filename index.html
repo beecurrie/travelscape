@@ -1,69 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="assets/font-awesome/css/all.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/sweetalert2.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/daterangepicker/daterangepicker.css">
-	<link rel="stylesheet" type="text/css" href="css/jquery.fullpage.css">
-	<link rel="stylesheet" type="text/css" href="css/custom.min.css">
+	<meta charset='UTF-8'>
+	<link rel='stylesheet' href='assets/font-awesome/css/all.css'>
+	<link rel='stylesheet' type='text/css' href='css/bootstrap.css'>
+	<link rel='stylesheet' href='css/sweetalert2.min.css'>
+	<link rel='stylesheet' type='text/css' href='assets/daterangepicker/daterangepicker.css'>
+	<link rel='stylesheet' type='text/css' href='css/jquery.fullpage.css'>
+	<link rel='stylesheet' type='text/css' href='css/custom.min.css'>
 	<title>Travelscape</title>
 </head>
 
 <body>
 	<!-- Fullpage Container BEGIN -->
-	<div id="fullpage">
-		<div class="section active" data-anchor="section1">
+	<div id='fullpage'>
+		<div class='section active' data-anchor='section1'>
 
 			<!-- Background image -->
-			<div class="bg-image" style="
+			<div class='bg-image' style='
     background-image: url(images/queenstown.jpg);
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
     height: 100%;
-		width: 100%;">
+		width: 100%;'>
 				<!-- Background image -->
 
 				<!-- Main Header Container -->
-				<div class="main">
+				<div class='main'>
 					<!-- Icon/Logo -->
-					<img src="images/house.png" alt="icon" id="houseIcon">
+					<img src='images/house.png' alt='icon' id='houseIcon'>
 					<!-- Header -->
-					<h1 id="trvlscpeHdr">Travelscape</h1>
+					<h1 id='trvlscpeHdr'>Travelscape</h1>
 				</div>
 				<!-- Main Header Container ENDS -->
 
 				<!-- Slide One Begins -->
-				<div class="slide" data-anchor="slide1">
-					<div class="formContainer">
+				<div class='slide' data-anchor='slide1'>
+					<div class='formContainer'>
 					<!-- Input Form BEGINS -->
-					<div class="form" data-parsley-validate="">
+					<div class='form' data-parsley-validate=''>
 							<!-- Location Select -->
-							<label for="location-select">Location</label><br>
-							<select name="location" id="location-select" required="">
-								<option value="">--Please choose a location--</option>
-								<option value="wellington">Wellington</option>
-								<option value="auckland">Auckland</option>
-								<option value="christchurch">Christchurch</option>
+							<label for='location-select'>Location</label><br>
+							<select name='location' id='location-select' required=''>
+								<option value=''>--Please choose a location--</option>
+								<option value='wellington'>Wellington</option>
+								<option value='auckland'>Auckland</option>
+								<option value='christchurch'>Christchurch</option>
 							</select>
 
 							<!-- Guest Select -->
-							<label for="guest-select">Guests</label><br>
-							<select name="guests" id="guestSelect" required="">
-								<option value="">--Please select number of guests--</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
+							<label for='guest-select'>Guests</label><br>
+							<select name='guests' id='guestSelect' required=''>
+								<option value=''>--Please select number of guests--</option>
+								<option value='1'>1</option>
+								<option value='2'>2</option>
+								<option value='3'>3</option>
+								<option value='4'>4</option>
 							</select>
 
 							<!-- Date Picker -->
-							<label for="date">Dates</label>
-							<input type="text" id="datePicker" required="">
+							<label for='date'>Dates</label>
+							<input type='text' id='datePicker' required=''>
 							<!-- Date Picker ENDS -->
 						</div>
 						<!-- Input Form ENDS -->
@@ -71,9 +71,9 @@
 					<!-- Form container ENDS -->
 
 					<!--  Search Button -->
-					<div class="search">
-						<button id="searchBtn">
-							<span>Search <i class="fas fa-search"></i> </span>
+					<div class='search'>
+						<button id='searchBtn'>
+							<span>Search <i class='fas fa-search'></i> </span>
 						</button>
 					</div>
 					<!-- Search Button ENDS -->
@@ -82,43 +82,43 @@
 				<!-- Slide One END -->
 
 				<!-- Slide Two BEGINS -->
-				<div class="slide" data-anchor="slide2">
+				<div class='slide' data-anchor='slide2'>
 
-					<div class="cardHolder">
+					<div class='cardHolder'>
 
-						<div class="card-hotel card hidden-hotel" style="width: 20rem;">
-								<img src="images/hotel.jpeg" class="card-img-top" alt="hotel">
-								<div class="card-body">
-									<h5 class="hotel-title">Hotel</h5>
-									<p class="hotel-text">This is the text for the hotel card</p>
-								<button class="btn btn-dark" id="hotelSelect">View</button>
+						<div class='card-hotel card hidden-hotel' style='width: 20rem;'>
+								<img src='images/hotel.jpeg' class='card-img-top' alt='hotel'>
+								<div class='card-body'>
+									<h5 class='hotel-title'>Hotel</h5>
+									<p class='hotel-text'>This is the text for the hotel card</p>
+								<button class='btn btn-dark' id='hotelSelect'>View</button>
 						</div>
 					</div>
 
-					<div class="card-hostel card hidden-hostel" style="width: 20rem;">
-							<img src="images/hostel.jpg" class="card-img-top" alt="hostel">
-							<div class="card-body">
-								<h5 class="hostel-title">Hostel</h5>
-								<p class="hostel-text">This is the text for the hostel card</p>
-							<button class="btn btn-dark" id="hostelSelect">View</button>
+					<div class='card-hostel card hidden-hostel' style='width: 20rem;'>
+							<img src='images/hostel.jpg' class='card-img-top' alt='hostel'>
+							<div class='card-body'>
+								<h5 class='hostel-title'>Hostel</h5>
+								<p class='hostel-text'>This is the text for the hostel card</p>
+							<button class='btn btn-dark' id='hostelSelect'>View</button>
 					</div>
 				</div>
 
-					<div class="card-motel card hidden-motel" style="width: 20rem;">
-							<img src="images/motel.jpeg" class="card-img-top" alt="motel">
-								<div class="card-body">
-									<h5 class="motel-title">Motel</h5>
-									<p class="motel-text">This is the text for the motel card</p>
-								<button class="btn btn-dark" id="motelSelect">View</button>
+					<div class='card-motel card hidden-motel' style='width: 20rem;'>
+							<img src='images/motel.jpeg' class='card-img-top' alt='motel'>
+								<div class='card-body'>
+									<h5 class='motel-title'>Motel</h5>
+									<p class='motel-text'>This is the text for the motel card</p>
+								<button class='btn btn-dark' id='motelSelect'>View</button>
 						</div>
 					</div>
 
-					<div class="card-house card hidden-house" style="width: 20rem;">
-							<img src="images/house.jpeg" class="card-img-top" alt="house">
-								<div class="card-body">
-									<h5 class="house-title">House</h5>
-									<p class="house-text">This is the text for the house card</p>
-								<button class="btn btn-dark" id="houseSelect">View</button>
+					<div class='card-house card hidden-house' style='width: 20rem;'>
+							<img src='images/house.jpeg' class='card-img-top' alt='house'>
+								<div class='card-body'>
+									<h5 class='house-title'>House</h5>
+									<p class='house-text'>This is the text for the house card</p>
+								<button class='btn btn-dark' id='houseSelect'>View</button>
 						</div>
 					</div>
 
@@ -131,20 +131,20 @@
 
 				<!-- Slide THREE BEGINS -->
 
-				<div class="slide" data-anchor="slide3">
+				<div class='slide' data-anchor='slide3'>
 
-				<div id="selectionBoxOne">
-					<h1 id="mapHeader">Map View</h1>
-					<div class='iframe'><iframe height="85%" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Wellington+(Place%20Of%20Stay)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+				<div id='selectionBoxOne'>
+					<h1 id='mapHeader'>Map View</h1>
+					<div class='iframe'><iframe height='85%' width='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=Wellington+(Place%20Of%20Stay)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>
 				</div></div>
 
-				<div id="selectionBoxTwo">
-					<div id='info'><img src="images/placeholder.jpg" id="selectedImage" align="right"><h1 id="selectedHeader">Choice of Stay</h1><span><p id="selectedBlurb">String of Accomodation Blurb</span></p></div>
+				<div id='selectionBoxTwo'>
+					<div id='info'><img src='images/placeholder.jpg' id='selectedImage' align='right'><h1 id='selectedHeader'>Choice of Stay</h1><span><p id='selectedBlurb'>String of Accomodation Blurb</span></p></div>
 					<br><ul>Meal Options</ul>
-					<li id="mealOne">Meal Option 1</li>
-					<li id="mealTwo">Meal Option 2</li>
-					<li id="mealThree">Meal Option 3</li>
-					<button type="button" id="cancelBtn" class="btn btn-light">Back</button> <button type="button" id="bookBtn" class="btn btn-dark">Book</button>
+					<li id='mealOne'>Meal Option 1</li>
+					<li id='mealTwo'>Meal Option 2</li>
+					<li id='mealThree'>Meal Option 3</li>
+					<button type='button' id='cancelBtn' class='btn btn-light'>Back</button> <button type='button' id='bookBtn' class='btn btn-dark'>Book</button>
 				</div>
 				<!-- Selection Box ENDS -->
 
@@ -152,30 +152,30 @@
 				<!-- Slide Three ENDS  -->
 
 				<!-- Slide Four BEGINS -->
-				<div class="slide" data-anchor="slide4">
+				<div class='slide' data-anchor='slide4'>
 
 				<!-- BookingScreen container -->
-					<div id="bookingScreen">
+					<div id='bookingScreen'>
 
 				<!-- infoMealChoice container -->
-					<div id="infoMealChoice">
-								<select name="meals" id="mealSelection" required="">
-								  <option value="mealOne" id="mealOneSelect">Meal One</option>
-								  <option value="mealTwo" id="mealTwoSelect">Meal Two</option>
-								  <option value="mealThree" id="mealThreeSelect">Meal Three</option>
-								</select>
-							<!-- dropdown ENDS -->
-							<button type="button" id="updateMeal" class="btn btn-dark">Confirm</button>
-							<p id="totalPrice">Total: $$$</p>
-						</div>
-						<!--  infoMealChoice ENDS -->
+	<div id='infoMealChoice'>
+				<select name='meals' id='mealSelection' required=''>
+						<option value='mealOne' id='mealOneSelect'>Meal One</option>
+						<option value='mealTwo' id='mealTwoSelect'>Meal Two</option>
+						<option value='mealThree' id='mealThreeSelect'>Meal Three</option>
+					</select>
+					<!-- dropdown ENDS -->
+				<button type='button' id='updateMeal' class='btn btn-dark'>Confirm</button>
+				<p id='totalPrice'>Total: $$$</p>
+			</div>
+		<!--  infoMealChoice ENDS -->
 
 
 				<!-- viewChoice container -->
-				<div id="viewChoice">
-				<span><h1 align="right" id="finalHeader">Accomodation Choice</h1></span>
-				<img src="images/placeholder.jpg" id="finalImage" align="right">
-				<button type="button" id="cancelBtnFinal" class="btn btn-light">Back</button> <button type="button" id="bookBtnFinal" class="btn btn-dark">Book</button>
+				<div id='viewChoice'>
+				<span><h1 align='right' id='finalHeader'>Accomodation Choice</h1></span>
+				<img src='images/placeholder.jpg' id='finalImage' align='right'>
+				<button type='button' id='cancelBtnFinal' class='btn btn-light'>Back</button> <button type='button' id='bookBtnFinal' class='btn btn-dark'>Book</button>
 				</div>
 				<!-- viewChoice ENDS -->
 
@@ -189,14 +189,14 @@
 	</div>
 	<!-- FullPage Container END -->
 
-	<script src="js/jquery.min.js"></script>
-	<script src="assets/daterangepicker/moment.min.js"></script>
-	<script src="assets/daterangepicker/daterangepicker.js"></script>
-	<script src="js/bootstrap.bundle.js"></script>
-	<script src="js/jquery.fullpage.js"></script>
-	<script src="js/parsley.js"></script>
-	<script src="js/sweetalert2.all.min.js"></script>
-	<script src="js/custom.js"></script>
+	<script src='js/jquery.min.js'></script>
+	<script src='assets/daterangepicker/moment.min.js'></script>
+	<script src='assets/daterangepicker/daterangepicker.js'></script>
+	<script src='js/bootstrap.bundle.js'></script>
+	<script src='js/jquery.fullpage.js'></script>
+	<script src='js/parsley.js'></script>
+	<script src='js/sweetalert2.all.min.js'></script>
+	<script src='js/custom.js'></script>
 
 </body>
 
