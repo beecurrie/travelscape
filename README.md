@@ -21,6 +21,9 @@ The goal of this project was to supply the user with a simple and easy to use ap
 Click to view screenshot ⬇️  
 [HTML Validation](https://prnt.sc/1ay91vh)  
 *Minor iFrame errors with MAP VIEW on Slide 3 but necessary as external pull*
+*LI/UL Error is obselete because the code is an external pull for a working selection box*
+*The 'align' in line style is used to override the CSS alternatively to the important tag*
+
 
 ### CSS - w3 Schools CSS Validator
 
