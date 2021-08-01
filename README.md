@@ -29,7 +29,7 @@ Click to view screenshot ⬇️
 
 Click to view screenshot ⬇️  
 [CSS Validation](https://prnt.sc/1ayaixr)  
-*No Errors within CSS*
+*The search button CSS was an external pull from CODEPEN with a gradient background, this code is a direct pull after the design was made on codepen*
 
 ### JS - Gulp Lint
 
